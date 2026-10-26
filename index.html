@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Progress Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <h2>Progress Tracker</h2>
+    <a href="#progress-section">View Progress</a>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Student Progress Tracker</h1>
+      <p class="subtitle">
+        Add student course progress and track learning completion.
+      </p>
+
+      <form id="progressForm">
+        <label for="studentName">Student Name</label>
+        <input
+          type="text"
+          id="studentName"
+          name="studentName"
+          placeholder="Enter student name"
+          required
+        >
+
+        <label for="courseName">Course Name</label>
+        <input
+          type="text"
+          id="courseName"
+          name="courseName"
+          placeholder="Enter course name"
+          required
+        >
+
+        <label for="completionPercentage">
+          Completion Percentage (0-100)
+        </label>
+        <input
+          type="number"
+          id="completionPercentage"
+          name="completionPercentage"
+          min="0"
+          max="100"
+          step="1"
+          placeholder="e.g. 75"
+          required
+        >
+
+        <button type="submit" id="submitBtn">
+          Add Progress
+        </button>
+
+        <p id="statusMessage" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="progress-section" class="progress-section">
+      <h2>Student Progress Records</h2>
+      <p id="listMessage" role="status" aria-live="polite">
+        Loading progress records...
+      </p>
+
+      <div id="progressList" class="progress-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Student Progress Tracker &copy; 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
